@@ -44,4 +44,28 @@ abstract class Model
         return $db->query($sql, [], static::class);
     }
 
+    public function insert()
+    {
+        $db = new Db();
+        $props = get_object_vars($this);
+
+        $fields = [];
+        $binds = [];
+        $data = [];
+        foreach ($props as $name => $value) {
+            if ('id' === $name) {
+                continue;
+            }
+
+            $fields[] = $name;
+            $binds[] = ':' . $name;
+            $data[':' . $name] = $value;
+        }
+
+        $sql = 'INSERT INTO ' . static::$table . ' (' . implode(', ', $fields) . ') VALUES (' . implode(', ', $binds) . ')';
+        echo $sql;
+
+        $db->execute($sql, $data);
+    }
+
 }
