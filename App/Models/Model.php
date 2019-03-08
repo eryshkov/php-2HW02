@@ -66,6 +66,7 @@ abstract class Model
         echo $sql;
 
         $db->execute($sql, $data);
+        $this->id = $db->lastInsertId();
     }
 
 }
