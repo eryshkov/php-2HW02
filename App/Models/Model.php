@@ -63,7 +63,6 @@ abstract class Model
         }
 
         $sql = 'INSERT INTO ' . static::$table . ' (' . implode(', ', $fields) . ') VALUES (' . implode(', ', $binds) . ')';
-        echo $sql;
 
         $db->execute($sql, $data);
         $this->id = $db->lastInsertId();
