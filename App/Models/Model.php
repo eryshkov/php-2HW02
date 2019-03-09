@@ -76,7 +76,6 @@ abstract class Model
         $props = get_object_vars($this);
 
         $fields = [];
-        $binds = [];
         $data = [];
         foreach ($props as $name => $value) {
             $data[':' . $name] = $value;
