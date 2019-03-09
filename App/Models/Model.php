@@ -90,4 +90,19 @@ abstract class Model
 
         return $db->execute($sql, $data);
     }
+
+    public function save(): void
+    {
+        if (isset($this->id)) {
+            $obj = static::findById($this->id);
+        } else {
+            $obj = false;
+        }
+
+        if (false !== $obj) {
+            $this->update();
+        } else {
+            $this->insert();
+        }
+    }
 }
