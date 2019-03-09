@@ -44,7 +44,7 @@ abstract class Model
         return $db->query($sql, [], static::class);
     }
 
-    public function insert(): void
+    public function insert(): bool
     {
         $db = new Db();
         $props = get_object_vars($this);
@@ -64,11 +64,13 @@ abstract class Model
 
         $sql = 'INSERT INTO ' . static::$table . ' (' . implode(', ', $fields) . ') VALUES (' . implode(', ', $binds) . ')';
 
-        $db->execute($sql, $data);
+        $result = $db->execute($sql, $data);
         $this->id = $db->lastInsertId();
+
+        return $result;
     }
 
-    public function update(): void
+    public function update(): bool
     {
         $db = new Db();
         $props = get_object_vars($this);
@@ -84,7 +86,8 @@ abstract class Model
             $fields[] = $name . '=:' . $name;
         }
 
-        $sql = 'UPDATE '. static::$table . ' SET '. implode(', ', $fields) . ' WHERE id=:id';
-        $db->execute($sql, $data);
+        $sql = 'UPDATE ' . static::$table . ' SET ' . implode(', ', $fields) . ' WHERE id=:id';
+
+        return $db->execute($sql, $data);
     }
 }
