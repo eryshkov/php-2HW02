@@ -72,6 +72,10 @@ abstract class Model
 
     public function update(): bool
     {
+        if (!isset($this->id)) {
+            return false;
+        }
+
         $db = new Db();
         $props = get_object_vars($this);
 
