@@ -14,8 +14,10 @@ class Db
      */
     public function __construct()
     {
-        $dsn = 'mysql:host=php-2hw02.mac;port=8889;dbname=php2hw02';
-        $this->dbh = new \PDO($dsn, 'eug', '123');
+        $config = Config::instance();
+        $dbConfig = $config->data['db'];
+        $dsn = 'mysql:host=' . $dbConfig['host'] . ';port=' . $dbConfig['port'] . ';dbname=' . $dbConfig['dbname'];
+        $this->dbh = new \PDO($dsn, $dbConfig['userName'], $dbConfig['password']);
         $this->dbh->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
     }
 

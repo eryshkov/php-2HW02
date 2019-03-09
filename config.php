@@ -5,7 +5,7 @@ $result = [
         'driver'   => 'mysql',
         'host'     => 'php-2hw02.mac',
         'port'     => '8889',
-        'name'     => 'php2hw02',
+        'dbname'     => 'php2hw02',
         'userName' => 'eug',
         'password' => '123',
     ],
