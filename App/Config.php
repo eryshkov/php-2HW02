@@ -25,7 +25,7 @@ class Config
     /**
      * @return Config
      */
-    public static function load(): Config
+    public static function load(): self
     {
         if (isset(self::$obj)) {
             return self::$obj;
