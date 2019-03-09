@@ -33,6 +33,7 @@
                 <li><a href="/tests/Db.php">Db</a></li>
                 <li><a href="/tests/Article.php">Article</a></li>
                 <li><a href="/tests/User.php">User</a></li>
+                <li><a href="/tests/Config.php">Config</a></li>
             </ul>
         </div>
     </div>
