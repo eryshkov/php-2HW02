@@ -27,15 +27,12 @@ class Config
      */
     public static function load(): Config
     {
-        static $objCount = 0;
-        if ($objCount > 0) {
+        if (isset(self::$obj)) {
             return self::$obj;
         }
 
-        $config = new Config();
+        $config = new self();
         $config->data = include __DIR__ . '/../config.php';
-
-        $objCount++;
 
         self::$obj = $config;
 
