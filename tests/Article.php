@@ -19,4 +19,5 @@ $articles = Article::getAllLast($limit);
 assert($limit === count($articles));
 
 $article = Article::findById(1);
+//$article->
 $article->update();

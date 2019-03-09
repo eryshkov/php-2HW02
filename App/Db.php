@@ -32,7 +32,13 @@ class Db
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
-        $data = $sth->fetchAll(\PDO::FETCH_CLASS, $class);
+
+        if (isset($class)) {
+            $data = $sth->fetchAll(\PDO::FETCH_CLASS, $class);
+        } else {
+            $data = $sth->fetchAll();
+        }
+
         return $data;
     }
 
