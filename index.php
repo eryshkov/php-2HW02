@@ -2,9 +2,8 @@
 
 require __DIR__ . '/autoload.php';
 
-$article = \App\Models\Article::findById(1);
-$article->insert();
-var_dump($article);
+$config = new \App\Config();
+var_dump($config->data['db']['host']);
 die();
 
 $articles = \App\Models\Article::getAllLast(3);
