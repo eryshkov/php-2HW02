@@ -13,12 +13,12 @@ class Config
 
     public static function instance(): self
     {
-        static $obj = null;
+        static $instance = null;
 
-        if (!isset($obj)) {
-            return $obj = new self;
+        if (!isset($instance)) {
+            $instance = new self;
         }
 
-        return $obj;
+        return $instance;
     }
 }
