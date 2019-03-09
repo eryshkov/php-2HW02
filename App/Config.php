@@ -8,22 +8,17 @@ class Config
 
     protected function __construct()
     {
-
+        $this->data = include __DIR__ . '/../config.php';
     }
 
-    public static function load(): self
+    public static function instance(): self
     {
         static $obj = null;
 
-        if (isset($obj)) {
-            return $obj;
+        if (!isset($obj)) {
+            return $obj = new self;
         }
 
-        $config = new self();
-        $config->data = include __DIR__ . '/../config.php';
-
-        $obj = $config;
-
-        return $config;
+        return $obj;
     }
 }
