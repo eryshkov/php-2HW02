@@ -2,7 +2,7 @@
 
 require __DIR__ . '/autoload.php';
 
-$config = new \App\Config();
+$config = \App\Config::load();
 var_dump($config->data['db']['host']);
 die();
 
