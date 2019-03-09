@@ -21,6 +21,4 @@ assert($limit === count($articles));
 $article = Article::findById(1);
 assert($article->update());
 
-//$article = Article::findById(1);
-//$article->id = null;
-//$article->save();
+$article = Article::findById(1);

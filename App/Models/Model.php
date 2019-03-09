@@ -104,4 +104,13 @@ abstract class Model
             $this->insert();
         }
     }
+
+    public function delete(): void
+    {
+        if (isset($this->id)) {
+            $db = new Db();
+            $sql = 'DELETE FROM ' . static::$table . ' WHERE id=:id';
+            $db->execute($sql, [':id' => $this->id]);
+        }
+    }
 }
