@@ -2,13 +2,15 @@
 
 require __DIR__ . '/autoload.php';
 
-if (isset($_GET['action']) && 'new' === $_GET['action']) {
-    $article = \App\Models\Article::findById($_GET['id']);
-    if (false !== $article) {
-        $article->delete();
-    }
+if (isset($_POST['title'], $_POST['content'])) {
+    $article = new \App\Models\Article();
+
+    $article->title = $_POST['title'];
+    $article->content = $_POST['content'];
+    $article->insert();
+
+    header('Location:' . '/news_admin.php');
+    exit();
 }
 
-$articles = \App\Models\Article::getAllLast();
-
-include __DIR__ . '/templates/news_admin.php';
+include __DIR__ . '/templates/news_insert.php';
