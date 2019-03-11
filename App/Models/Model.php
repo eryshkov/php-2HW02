@@ -36,10 +36,15 @@ abstract class Model
         return false;
     }
 
-    public static function getAllLast(int $limit): array
+    public static function getAllLast(int $limit = null): array
     {
         $db = new Db();
-        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit;
+
+        if (isset($limit)) {
+            $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit;
+        } else {
+            $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC';
+        }
 
         return $db->query($sql, [], static::class);
     }
