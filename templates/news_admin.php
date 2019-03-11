@@ -18,9 +18,21 @@
             <a href="/news_admin.php" class="btn btn-outline-success">Админ-Новости</a>
         </div>
     </div>
+    <?php
+    if (isset($info)) {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $info; ?>
+                </div>
+            </div>
+        </div>
+        <?php
+    } ?>
     <div class="row">
         <div class="col">
-            <a class="btn btn-outline-primary mb-1" href="/news_admin.php?action=new">Добавить новость</a>
+            <a class="btn btn-outline-primary mb-1" href="/news_insert.php">Добавить новость</a>
         </div>
     </div>
     <?php
@@ -28,10 +40,10 @@
         ?>
         <div class="row mb-1">
             <div class="col-auto">
-                <a class="btn btn-outline-info" href="/news_admin.php?action=edit&id=<?php echo $article->id; ?>">✎</a>
+                <a class="btn btn-outline-info" href="/news_edit.php?id=<?php echo $article->id; ?>">✎</a>
             </div>
             <div class="col-auto">
-                <a class="btn btn-outline-danger" href="/news_admin.php?action=del&id=<?php echo $article->id; ?>">X</a>
+                <a class="btn btn-outline-danger" href="/news_delete.php?id=<?php echo $article->id; ?>">X</a>
             </div>
             <div class="col">
                 <a href="/article.php?id=<?php echo $article->id; ?>"><?php echo $article->title; ?></a>
