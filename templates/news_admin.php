@@ -18,6 +18,11 @@
             <a href="/news_admin.php" class="btn btn-outline-success">Админ-Новости</a>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-outline-primary mb-1" href="/news_admin.php?new=1">Добавить новость</a>
+        </div>
+    </div>
     <?php
     foreach ($articles as $article) {
         ?>
