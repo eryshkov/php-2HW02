@@ -15,7 +15,7 @@ assert(false === $result);
 $query = 'UPDATE news SET title=:newTitle WHERE id=:id';
 $params = [
     ':id' => 3,
-    ':newTitle' => 'nil',
+    ':newTitle' => 'Венесуэла выдворила европейского посла',
 ];
 $result = $db->execute($query, $params);
 assert(true === $result);
