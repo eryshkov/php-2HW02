@@ -2,7 +2,7 @@
 
 require __DIR__ . '/autoload.php';
 
-if (isset($_GET['action'], $_GET['id']) && 'del' === $_GET['action']) {
+if (isset($_GET['action'], $_GET['id']) && 'edit' === $_GET['action']) {
     $article = \App\Models\Article::findById($_GET['id']);
     if (false !== $article) {
         $article->delete();
