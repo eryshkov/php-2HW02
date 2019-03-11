@@ -20,7 +20,7 @@ abstract class Model
 
     /**
      * @param int $id
-     * @return bool|mixed
+     * @return bool|static
      */
     public static function findById(int $id)
     {

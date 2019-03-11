@@ -20,7 +20,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a class="btn btn-outline-primary mb-1" href="/news_admin.php?new=1">Добавить новость</a>
+            <a class="btn btn-outline-primary mb-1" href="/news_admin.php?action=new">Добавить новость</a>
         </div>
     </div>
     <?php
@@ -28,10 +28,10 @@
         ?>
         <div class="row mb-1">
             <div class="col-auto">
-                <a class="btn btn-outline-info" href="/news_admin.php?edit=<?php echo $article->id; ?>">✎</a>
+                <a class="btn btn-outline-info" href="/news_admin.php?action=edit&id=<?php echo $article->id; ?>">✎</a>
             </div>
             <div class="col-auto">
-                <a class="btn btn-outline-danger" href="/news_admin.php?del=<?php echo $article->id; ?>">X</a>
+                <a class="btn btn-outline-danger" href="/news_admin.php?action=del&id=<?php echo $article->id; ?>">X</a>
             </div>
             <div class="col">
                 <a href="/article.php?id=<?php echo $article->id; ?>"><?php echo $article->title; ?></a>
