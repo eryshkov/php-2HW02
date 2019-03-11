@@ -19,35 +19,22 @@
         </div>
     </div>
     <?php
-    if (false !== $article) {
+    foreach ($articles as $article) {
         ?>
-        <div class="row">
-            <div class="col">
-                <h6><?php echo $article->title; ?></h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p><?php echo $article->content; ?></p>
-            </div>
-        </div>
-        <?php
-    } else {
-        ?>
-        <div class="row">
+        <div class="row mb-1">
             <div class="col-auto">
-                <div class="alert alert-danger" role="alert">
-                    Новость не найдена
-                </div>
+                <a class="btn btn-outline-info" href="/news_admin.php?edit=<?php echo $article->id; ?>">✎</a>
             </div>
-        </div>
-        <div class="row">
+            <div class="col-auto">
+                <a class="btn btn-outline-danger" href="/news_admin.php?del=<?php echo $article->id; ?>">X</a>
+            </div>
             <div class="col">
-                <a href="/">Вернуться на главную</a>
+                <a href="/article.php?id=<?php echo $article->id; ?>"><?php echo $article->title; ?></a>
             </div>
         </div>
         <?php
-    } ?>
+    }
+    ?>
 </div>
 </body>
 </html>
