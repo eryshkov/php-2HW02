@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/autoload.php';
+require __DIR__ . '/../autoload.php';
 
 if (isset($_GET['id'])) {
     $article = \App\Models\Article::findById($_GET['id']);
@@ -9,4 +9,4 @@ if (isset($_GET['id'])) {
     }
 }
 
-header('Location:' . '/news_read.php');
+header('Location:' . '/admin/index.php');

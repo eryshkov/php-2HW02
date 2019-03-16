@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/autoload.php';
+require __DIR__ . '/../autoload.php';
 
 if (isset($_POST['title'], $_POST['content'])) {
     $article = new \App\Models\Article();
@@ -9,6 +9,6 @@ if (isset($_POST['title'], $_POST['content'])) {
     $article->content = $_POST['content'];
     $article->insert();
 
-    header('Location:' . '/news_read.php');
+    header('Location:' . '/admin/index.php');
     exit();
 }
