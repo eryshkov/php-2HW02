@@ -15,21 +15,9 @@
         <div class="col">
             <a href="/" class="btn btn-outline-success">Новости</a>
             <a href="/tests/" class="btn btn-outline-success">Тесты</a>
-            <a href="/news_admin.php" class="btn btn-outline-success">Админ-Новости</a>
+            <a href="/news_read.php" class="btn btn-outline-success">Админ-Новости</a>
         </div>
     </div>
-    <?php
-    if (isset($info)) {
-        ?>
-        <div class="row">
-            <div class="col-auto">
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $info; ?>
-                </div>
-            </div>
-        </div>
-        <?php
-    } ?>
     <div class="row">
         <div class="col">
             <a class="btn btn-outline-primary mb-1" href="/news_insert.php">Добавить новость</a>
