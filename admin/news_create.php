@@ -9,6 +9,6 @@ if (isset($_POST['title'], $_POST['content'])) {
     $article->content = $_POST['content'];
     $article->insert();
 
-    header('Location:' . '/admin/index.php');
+    header('Location:' . '/admin/');
     exit();
 }

@@ -9,4 +9,4 @@ if (isset($_GET['id'])) {
     }
 }
 
-header('Location:' . '/admin/index.php');
+header('Location:' . '/admin/');
